@@ -1,0 +1,32 @@
+plugins {
+    id 'com.android.application' version '8.5.2'
+    id 'org.jetbrains.kotlin.android' version '1.9.24'
+    id 'org.jetbrains.kotlin.plugin.parcelize' version '1.9.24'
+}
+
+android {
+    namespace 'net.signde.projectivy.cars'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'net.signde.projectivy.cars'
+        minSdk 28
+        targetSdk 34
+        versionCode 3
+        versionName '0.3'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions { jvmTarget = '17' }
+    buildFeatures { aidl true }
+    sourceSets.main {
+        java.srcDir 'projectivy-api/main/java'
+        aidl.srcDir 'projectivy-api/main/aidl'
+    }
+}
+dependencies {
+    implementation 'org.jsoup:jsoup:1.18.3'
+    implementation 'androidx.annotation:annotation:1.7.1'
+}
